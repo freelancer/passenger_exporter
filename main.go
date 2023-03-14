@@ -18,9 +18,8 @@ import (
 	"golang.org/x/net/html/charset"
 
 	"github.com/prometheus/client_golang/prometheus"
-	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"github.com/prometheus/common/log"
 	"github.com/prometheus/common/version"
-	"github.com/sirupsen/logrus"
 )
 
 const (
@@ -33,7 +32,6 @@ var (
 	timeoutErr = errors.New("passenger-status command timed out")
 
 	processIdentifiers = make(map[string]int)
-	log                = logrus.New()
 )
 
 // Exporter collects metrics from a passenger-nginx integration.
