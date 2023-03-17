@@ -1,7 +1,6 @@
 package main
 
 import (
-	"flag"
 	"math"
 	"os"
 	"reflect"
@@ -39,6 +38,8 @@ func TestParsing(t *testing.T) {
 		if len(info.SuperGroups) == 0 {
 			t.Fatalf("%v: no supergroups in output", name)
 		}
+
+		parseFloat("")
 
 		topLevelQueue := parseFloat(info.TopLevelRequestsInQueue)
 		if topLevelQueue == 0 {
